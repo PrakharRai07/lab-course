@@ -1,0 +1,17 @@
+int spin=2;
+int bpin=7;
+void setup() 
+{
+pinMode(sPin, INPUT);
+pinMode(bPin, OUTPUT);
+}
+
+void loop()
+{
+   int read;
+   read=digitalRead(sPin);
+  if(read==HIGH)
+  digitalWrite(bPin,HIGH);
+else
+   digitalWrite(bPin,LOW);
+}
