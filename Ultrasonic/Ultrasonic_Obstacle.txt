@@ -1,0 +1,24 @@
+int trpin=5;
+int ecpin=6;
+float dis;
+long int dur;
+void setup()
+{
+  pinMode(trpin,OUTPUT);
+  pinMode(ecpin,INPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trpin,LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(trpin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trpin,LOW);
+ dur=pulseIn(ecpin,HIGH);
+ dis=dur*0.017;
+ Serial.print("Distance : ");
+ Serial.println(dis);
+}
